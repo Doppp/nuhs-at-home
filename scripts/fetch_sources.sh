@@ -28,6 +28,17 @@ printf 'Fetching NUHS@Home source pages...\n'
 fetch "https://www.nuhs.edu.sg/patient-care/nuhs-at-home" "reference/nuhs/index.raw.html"
 fetch "https://www.nuhs.edu.sg/patient-care/nuhs-at-home/how-does-nuhs-home-work" "reference/nuhs/how-it-works.raw.html"
 fetch "https://www.nuhs.edu.sg/patient-care/nuhs-at-home/how-does-nuhs-home-work/why-choose-nuhs-home" "reference/nuhs/why-choose.raw.html"
+fetch "https://www.nuhs.edu.sg/patient-care/nuhs-at-home/how-does-nuhs-home-work/nuhs-home-resources" "reference/nuhs/resources.raw.html"
+fetch "https://www.nuhs.edu.sg/patient-care/nuhs-at-home/nuhs-home-articles" "reference/nuhs/articles.raw.html"
+fetch "https://www.nuhs.edu.sg/patient-care/nuhs-at-home/nuhs-home-events" "reference/nuhs/events.raw.html"
+fetch "https://www.nuhs.edu.sg/patient-care/nuhs-at-home/nuhs-home-leadership-team" "reference/nuhs/leadership-team.raw.html"
+fetch "https://www.nuhs.edu.sg/patient-care/nuhs-at-home/nuhs-home-in-the-news" "reference/nuhs/in-the-news.raw.html"
+fetch "https://www.nuhs.edu.sg/patient-care/nuhs-at-home/nuhs-home-articles/GetList/" "reference/nuhs/listings/articles.page-1.html"
+fetch "https://www.nuhs.edu.sg/patient-care/nuhs-at-home/nuhs-home-events/GetList/" "reference/nuhs/listings/events.page-1.html"
+fetch "https://www.nuhs.edu.sg/patient-care/nuhs-at-home/GetList/" "reference/nuhs/listings/index.page-1.html"
+fetch "https://www.nuhs.edu.sg/patient-care/nuhs-at-home/nuhs-home-in-the-news/GetList/" "reference/nuhs/listings/in-the-news.page-1.html"
+fetch "https://www.nuhs.edu.sg/patient-care/nuhs-at-home/nuhs-home-in-the-news/GetList/?page=2" "reference/nuhs/listings/in-the-news.page-2.html"
+fetch "https://www.nuhs.edu.sg/patient-care/nuhs-at-home/how-does-nuhs-home-work/nuhs-home-resources/GetList/" "reference/nuhs/listings/resources.page-1.html"
 
 printf 'Fetching local site assets...\n'
 fetch "https://www.nuhs.edu.sg/ResourcePackages/NUHS/assets/dist/fonts/OpenSans-LightRegular-Latin.woff2" "assets/fonts/OpenSans-LightRegular-Latin.woff2"
@@ -53,4 +64,7 @@ fetch "https://www.nuhs.edu.sg/images/nuhslibraries/content/patient-care/nuhs-ho
 fetch "https://www.nuhs.edu.sg/images/nuhslibraries/content/patient-care/nuhs-home/banner-images/h4-1---why-choose-nuhs-at-home.jpg?sfvrsn=c814bb16_1" "assets/media/benefits-banner.jpg"
 fetch "https://www.nuhs.edu.sg/docs/nuhslibraries/content-document/patient-care/nuhs-home-resources/single-page-nuhs-at-home-brochure.pdf?sfvrsn=9c856210_4" "assets/docs/nuhs-at-home-brochure.pdf"
 
-printf '\nDone. Reference source lives in reference/, and the local site uses assets/.\n'
+printf 'Building local NUHS@Home mirrors...\n'
+python3 "$ROOT_DIR/scripts/build_nuhs_mirror.py"
+
+printf '\nDone. Reference source lives in reference/, mirrored pages live under patient-care/, and the landing page uses assets/.\n'
