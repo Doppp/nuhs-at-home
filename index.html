@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NUHS@Home | Hospital-Level Care at Home</title>
+    <meta
+      name="description"
+      content="NUHS@Home static site adapted to follow the Alexandra Hospital visual system, with a matching colour palette, header structure, alert banner, menu behaviour and typography."
+    />
+    <link rel="preload" href="assets/fonts/OpenSans-LightRegular-Latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/OpenSans-Regular-Latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/OpenSans-SemiBoldRegular-Latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="assets/css/site.css" />
+  </head>
+  <body>
+    <div class="pageHeader">
+      <div id="alertBanner" class="alertbanner link-decoration-underline show" data-bannerid="nuhsHomeBanner">
+        <div class="container position-relative">
+          <div class="carousel">
+            <div class="carousel-inner mb-4">
+              <div class="carousel-item active">
+                <div class="d-flex">
+                  <div class="content">
+                    <div class="title">Referral-Based Hospital-at-Home Care</div>
+                    <p class="mb-0 me-4">
+                      NUHS@Home is available to eligible patients after clinical assessment. Explore the programme,
+                      brochure and contact points below.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="alert-controls">
+              <button type="button" class="carousel-control" aria-label="Previous alert">&#8249;</button>
+              <div class="carousel-indicators">
+                <button type="button" class="active" aria-label="Slide 1"></button>
+              </div>
+              <button type="button" class="carousel-control" aria-label="Next alert">&#8250;</button>
+            </div>
+          </div>
+
+          <button type="button" class="btn-close" aria-label="Close alert" data-banner-close>
+            <span aria-hidden="true">&#10005;</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="pageHeaderMain">
+        <div class="corpBrandTopBar">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+
+        <div class="container">
+          <div class="socialMedia" aria-label="Social links">
+            <ul>
+              <li>
+                <a href="https://for.sg/nuhs-mobile-app" target="_blank" rel="noopener" title="NUHS App">
+                  <img src="assets/media/social-onenuhs.png" width="32" alt="NUHS App" />
+                </a>
+              </li>
+              <li>
+                <a href="https://facebook.com/nuhsathome" target="_blank" rel="noopener" title="Facebook">
+                  <img src="assets/media/social-fb.png" width="32" alt="Facebook" />
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/nuhsathome" target="_blank" rel="noopener" title="Instagram">
+                  <img src="assets/media/social-ig.png" width="32" alt="Instagram" />
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/company/national-university-health-system" target="_blank" rel="noopener" title="LinkedIn">
+                  <img src="assets/media/social-in.png" width="32" alt="LinkedIn" />
+                </a>
+              </li>
+              <li>
+                <a href="https://x.com/NUHSofficial/" target="_blank" rel="noopener" title="X">
+                  <img src="assets/media/social-x.png" width="32" alt="X" />
+                </a>
+              </li>
+              <li>
+                <a href="https://nuhsplus.edu.sg/" target="_blank" rel="noopener" title="NUHS+">
+                  <img src="assets/media/social-nuhplus.png" width="32" alt="NUHS+" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="navbar navbar-expand-lg">
+            <a class="navbar-brand" title="NUHS@Home" href="#top">
+              <img src="assets/media/nuhs-logo.png" alt="National University Health System" />
+            </a>
+
+            <button type="button" class="navbar-toggler" aria-expanded="false" aria-controls="megaMenu" aria-label="Toggle navigation">
+              Menu
+              <span class="navTogglerIcon" aria-hidden="true"><span></span></span>
+            </button>
+
+            <button type="button" class="search-trigger-m" aria-expanded="false" aria-controls="searchBar" title="Do a Search">
+              <span class="icon-search" aria-hidden="true"></span>
+              <span class="sr-only">Search</span>
+            </button>
+
+            <div id="megaMenu" class="navbar-collapse collapse">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+                  <a class="nav-link" href="#overview" title="For Patients &amp; Visitors">For Patients &amp; Visitors</a>
+                  <button type="button" class="m-dropdown-toggle" aria-expanded="false" aria-label="Toggle For Patients and Visitors submenu">
+                    &#8250;
+                  </button>
+                  <div class="dropdown-menu">
+                    <div class="menu-grid menu-grid-3">
+                      <div class="menuCol">
+                        <div class="header">Start here</div>
+                        <div class="menu-link"><a class="nav-link" href="#overview">Programme Overview</a></div>
+                        <div class="menu-link"><a class="nav-link" href="#how-it-works">How It Works</a></div>
+                        <div class="menu-link"><a class="nav-link" href="#benefits">Why Choose NUHS@Home</a></div>
+                      </div>
+                      <div class="menuCol">
+                        <div class="header">Useful resources</div>
+                        <div class="menu-link"><a class="nav-link" href="assets/docs/nuhs-at-home-brochure.pdf" target="_blank" rel="noopener">Download Brochure</a></div>
+                        <div class="menu-link"><a class="nav-link" href="https://www.nuhs.edu.sg/patient-care/nuhs-at-home/how-does-nuhs-home-work" target="_blank" rel="noopener">Official Walkthrough</a></div>
+                        <div class="menu-link"><a class="nav-link" href="https://www.nuhs.edu.sg/patient-care/nuhs-at-home/nuhs-home-articles" target="_blank" rel="noopener">Articles</a></div>
+                      </div>
+                      <div class="menuCol">
+                        <div class="header">Need help?</div>
+                        <div class="menu-link"><a class="nav-link" href="#contact">Contact NUHS@Home</a></div>
+                        <div class="menu-link"><a class="nav-link" href="mailto:asknuhsathome@nuhs.edu.sg">Email the team</a></div>
+                        <div class="menu-link"><a class="nav-link" href="https://www.nuhs.edu.sg/patient-care/nuhs-at-home" target="_blank" rel="noopener">Official Programme Page</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="nav-item dropdown clickable">
+                  <a class="nav-link" href="#services" title="Our Services">Our Services</a>
+                  <button type="button" class="m-dropdown-toggle" aria-expanded="false" aria-label="Toggle Our Services submenu">
+                    &#8250;
+                  </button>
+                  <div class="dropdown-menu">
+                    <div class="menu-grid menu-grid-2">
+                      <div class="menuCol">
+                        <div class="menu-link"><a class="nav-link" href="#services">Remote vital signs monitoring</a></div>
+                        <div class="menu-link"><a class="nav-link" href="#services">IV infusions and injections</a></div>
+                        <div class="menu-link"><a class="nav-link" href="#services">Laboratory investigations</a></div>
+                      </div>
+                      <div class="menuCol">
+                        <div class="menu-link"><a class="nav-link" href="#services">Home visits and teleconsults</a></div>
+                        <div class="menu-link"><a class="nav-link" href="#how-it-works">Daily medical review</a></div>
+                        <div class="menu-link"><a class="nav-link" href="#benefits">Subsidy support</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="nav-item dropdown clickable">
+                  <a class="nav-link" href="#resources" title="Resources">Resources</a>
+                  <button type="button" class="m-dropdown-toggle" aria-expanded="false" aria-label="Toggle Resources submenu">
+                    &#8250;
+                  </button>
+                  <div class="dropdown-menu">
+                    <div class="menu-grid menu-grid-2">
+                      <div class="menuCol">
+                        <div class="menu-link"><a class="nav-link" href="assets/docs/nuhs-at-home-brochure.pdf" target="_blank" rel="noopener">Single-Page Brochure</a></div>
+                        <div class="menu-link"><a class="nav-link" href="https://www.nuhs.edu.sg/patient-care/nuhs-at-home/how-does-nuhs-home-work" target="_blank" rel="noopener">How NUHS@Home Works</a></div>
+                      </div>
+                      <div class="menuCol">
+                        <div class="menu-link"><a class="nav-link" href="https://www.nuhs.edu.sg/patient-care/nuhs-at-home/nuhs-home-events" target="_blank" rel="noopener">Events</a></div>
+                        <div class="menu-link"><a class="nav-link" href="https://www.nuhs.edu.sg/patient-care/nuhs-at-home/nuhs-home-leadership-team" target="_blank" rel="noopener">Leadership Team</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link" href="https://www.nuhs.edu.sg/patient-care/nuhs-at-home" target="_blank" rel="noopener" title="About NUHS@Home">
+                    About NUHS@Home
+                  </a>
+                  <button type="button" class="m-dropdown-toggle" aria-expanded="false" aria-label="Toggle About NUHS@Home submenu">
+                    &#8250;
+                  </button>
+                  <div class="dropdown-menu">
+                    <div class="menu-grid menu-grid-2">
+                      <div class="menuCol">
+                        <div class="menu-link"><a class="nav-link" href="https://www.nuhs.edu.sg/patient-care/nuhs-at-home" target="_blank" rel="noopener">Programme Hub</a></div>
+                        <div class="menu-link"><a class="nav-link" href="https://www.nuhs.edu.sg/patient-care/nuhs-at-home/nuhs-home-in-the-news" target="_blank" rel="noopener">In the News</a></div>
+                      </div>
+                      <div class="menuCol">
+                        <div class="menu-link"><a class="nav-link" href="https://facebook.com/nuhsathome" target="_blank" rel="noopener">Facebook</a></div>
+                        <div class="menu-link"><a class="nav-link" href="https://www.instagram.com/nuhsathome" target="_blank" rel="noopener">Instagram</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="nav-item dropdown spotlight">
+                  <a class="nav-link" href="#contact" title="I Want To">I Want To</a>
+                  <button type="button" class="m-dropdown-toggle" aria-expanded="false" aria-label="Toggle I Want To submenu">
+                    &#8250;
+                  </button>
+                  <div class="dropdown-menu">
+                    <div class="menu-grid menu-grid-2">
+                      <div class="menuCol">
+                        <div class="menu-link"><a class="nav-link" href="assets/docs/nuhs-at-home-brochure.pdf" target="_blank" rel="noopener">Download the Brochure</a></div>
+                        <div class="menu-link"><a class="nav-link" href="#how-it-works">Understand the Patient Journey</a></div>
+                      </div>
+                      <div class="menuCol">
+                        <div class="menu-link"><a class="nav-link" href="mailto:asknuhsathome@nuhs.edu.sg">Email NUHS@Home</a></div>
+                        <div class="menu-link"><a class="nav-link" href="https://www.nuhs.edu.sg/patient-care/nuhs-at-home" target="_blank" rel="noopener">Visit the Official Site</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+
+              <button type="button" class="nav-link navmenu search-trigger d-none d-lg-block" aria-expanded="false" aria-controls="searchBar" title="Do a Search">
+                <span class="icon-search" aria-hidden="true"></span>
+                <span class="sr-only">Search</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <section class="site-search-bar">
+          <div id="searchBar" class="collapse">
+            <div class="container">
+              <div class="search-panel">
+                <div class="search-row">
+                  <input
+                    type="search"
+                    id="searchTextbox"
+                    class="search-textbox"
+                    placeholder="How May We Help You?"
+                    autocomplete="off"
+                    aria-label="Search"
+                  />
+                  <button type="button" id="searchButton" class="nuhs-btn-primary">Search</button>
+                </div>
+                <div id="searchResults" class="search-results" aria-live="polite"></div>
+                <div class="search-shortcuts">
+                  <a href="#overview">Overview</a>
+                  <a href="#services">Services</a>
+                  <a href="#how-it-works">How It Works</a>
+                  <a href="#benefits">Benefits</a>
+                  <a href="#contact">Contact</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <section class="pageSection">
+      <div class="container">
+        <div class="breadcrumbs">
+          <a href="#top">Home</a>
+          <span>&gt;</span>
+          <a href="#overview">Patient Care</a>
+          <span>&gt;</span>
+          <p class="currentPageTitle">NUHS@Home</p>
+        </div>
+        <div class="sectionTitle">NUHS@Home</div>
+      </div>
+    </section>
+
+    <main id="top">
+      <section class="featureHero">
+        <div class="container">
+          <div class="heroFrame">
+            <img src="assets/media/benefits-banner.jpg" alt="NUHS@Home care team support at home" />
+            <div class="heroCaption">
+              <p class="heroEyebrow">Hospital-at-home programme</p>
+              <h1>Hospital-Level Care in the Comfort of Your Home</h1>
+              <p>
+                NUHS@Home brings hospital-level medical care to eligible patients at home, supported by a dedicated
+                multidisciplinary care team, remote monitoring and home visits where required.
+              </p>
+              <div class="heroActions">
+                <a class="nuhs-btn-primary" href="#how-it-works">How Does It Work?</a>
+                <a class="nuhs-btn-outline light" href="assets/docs/nuhs-at-home-brochure.pdf" target="_blank" rel="noopener">
+                  Download Brochure
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="howMayWeHelp widget-theme">
+        <div class="container">
+          <h2 class="homePage-h2">How may we help?</h2>
+          <div class="help-grid">
+            <a class="help-card" href="#overview">
+              <span class="icon"><img src="assets/media/service-heart.png" alt="" /></span>
+              <span class="txt">Understand the programme</span>
+            </a>
+            <a class="help-card" href="#how-it-works">
+              <span class="icon"><img src="assets/media/service-monitor.png" alt="" /></span>
+              <span class="txt">See how the patient journey works</span>
+            </a>
+            <a class="help-card" href="#benefits">
+              <span class="icon"><img src="assets/media/benefit-house.png" alt="" /></span>
+              <span class="txt">Explore the benefits of care at home</span>
+            </a>
+            <a class="help-card" href="#contact">
+              <span class="icon"><img src="assets/media/service-ambulance.png" alt="" /></span>
+              <span class="txt">Contact the NUHS@Home team</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div class="container contentMargin">
+        <div class="contentNavBox">
+          <a href="#overview">What is NUHS@Home?</a> |
+          <a href="#services">Services at Home</a> |
+          <a href="#how-it-works">How Does NUHS@Home Work?</a> |
+          <a href="#benefits">Why Choose NUHS@Home?</a> |
+          <a href="#resources">Resources</a> |
+          <a href="#contact">Contact</a>
+        </div>
+
+        <section id="overview" class="contentSection">
+          <div class="sectionIntro">
+            <h2>What is NUHS@Home?</h2>
+            <p>
+              NUHS@Home, also known as Mobile Inpatient Care, is a hospital-at-home programme designed for eligible
+              patients who prefer to receive hospital-level care in a familiar environment.
+            </p>
+            <p>
+              Patients recover at home while doctors, nurses and allied health professionals monitor their progress
+              remotely and through home visits where required.
+            </p>
+          </div>
+        </section>
+
+        <section id="services" class="contentSection">
+          <div class="sectionIntro">
+            <h2>Types of NUHS@Home services</h2>
+            <p>The programme provides a range of hospital-level services tailored to each patient&apos;s needs.</p>
+          </div>
+
+          <div class="service-grid">
+            <article class="service-card">
+              <img src="assets/media/service-heart.png" alt="" />
+              <h3>Remote vital signs monitoring</h3>
+              <p>Patients are monitored remotely using smart devices and structured daily review.</p>
+            </article>
+            <article class="service-card">
+              <img src="assets/media/service-injection.png" alt="" />
+              <h3>Intravenous infusions and injections</h3>
+              <p>Treatments that usually require a ward stay can be delivered safely at home.</p>
+            </article>
+            <article class="service-card">
+              <img src="assets/media/service-blood.png" alt="" />
+              <h3>Laboratory investigations</h3>
+              <p>Blood and urine tests remain part of the care pathway without repeated hospital transfers.</p>
+            </article>
+            <article class="service-card">
+              <img src="assets/media/service-monitor.png" alt="" />
+              <h3>Home visits and virtual consultations</h3>
+              <p>Doctors, nurses and therapists combine in-person care with video review.</p>
+            </article>
+            <article class="service-card">
+              <img src="assets/media/service-ambulance.png" alt="" />
+              <h3>Hospital-equivalent treatment</h3>
+              <p>Patients receive treatment aligned with inpatient pathways while staying at home.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="how-it-works" class="contentSection">
+          <div class="sectionIntro">
+            <h2>How does NUHS@Home work?</h2>
+            <p>
+              The official programme flow centres on referral, suitability assessment, home setup and daily review.
+            </p>
+          </div>
+
+          <div class="journey-grid">
+            <article class="journey-step">
+              <span class="step-number">01</span>
+              <h3>Referral and assessment</h3>
+              <p>Patients are referred by their doctor and assessed for safety and clinical suitability.</p>
+            </article>
+            <article class="journey-step">
+              <span class="step-number">02</span>
+              <h3>Enrollment and setup</h3>
+              <p>The care team arranges equipment, instructions and the treatment plan for the home setting.</p>
+            </article>
+            <article class="journey-step">
+              <span class="step-number">03</span>
+              <h3>Daily review</h3>
+              <p>Doctors conduct daily video consultations, supported by home visits where necessary.</p>
+            </article>
+            <article class="journey-step">
+              <span class="step-number">04</span>
+              <h3>Nursing procedures</h3>
+              <p>Nurses perform procedures such as IV drips, injections and blood tests at home.</p>
+            </article>
+            <article class="journey-step">
+              <span class="step-number">05</span>
+              <h3>Shared patient role</h3>
+              <p>Patients remain contactable, stay at home and monitor vital signs as instructed.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="benefits" class="contentSection">
+          <div class="sectionIntro">
+            <h2>Why choose NUHS@Home?</h2>
+            <p>
+              The official programme highlights better recovery in familiar surroundings, greater family presence,
+              treatment delivered to the doorstep and inpatient-style subsidy support.
+            </p>
+          </div>
+
+          <div class="benefit-grid">
+            <article class="benefit-card">
+              <img src="assets/media/benefit-family.png" alt="" />
+              <h3>Better recovery in familiar surroundings</h3>
+              <p>Home can reduce stress and lower the risk of hospital-acquired infection.</p>
+            </article>
+            <article class="benefit-card">
+              <img src="assets/media/benefit-house.png" alt="" />
+              <h3>Home is where the heart is</h3>
+              <p>No restrictive visiting hours, and recovery happens around loved ones and daily routines.</p>
+            </article>
+            <article class="benefit-card">
+              <img src="assets/media/benefit-medical.png" alt="" />
+              <h3>Same treatment without the inconvenience</h3>
+              <p>The medical team brings care and treatment directly to the patient&apos;s doorstep.</p>
+            </article>
+            <article class="benefit-card">
+              <img src="assets/media/benefit-money.png" alt="" />
+              <h3>Same subsidy framework as inpatient care</h3>
+              <p>Patients continue to benefit from the same subsidy and insurance structures used in hospital care.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="resources" class="contentSection">
+          <div class="sectionIntro">
+            <h2>Resources</h2>
+            <p>Useful NUHS@Home links and materials kept in one place.</p>
+          </div>
+
+          <div class="resource-grid">
+            <a class="resource-card" href="assets/docs/nuhs-at-home-brochure.pdf" target="_blank" rel="noopener">
+              <strong>Single-page brochure</strong>
+              <span>Quick reference for patients and caregivers.</span>
+            </a>
+            <a class="resource-card" href="https://www.nuhs.edu.sg/patient-care/nuhs-at-home/how-does-nuhs-home-work" target="_blank" rel="noopener">
+              <strong>How NUHS@Home Works</strong>
+              <span>Official walkthrough of the patient journey.</span>
+            </a>
+            <a class="resource-card" href="https://www.nuhs.edu.sg/patient-care/nuhs-at-home/nuhs-home-articles" target="_blank" rel="noopener">
+              <strong>Articles</strong>
+              <span>Programme stories and updates.</span>
+            </a>
+            <a class="resource-card" href="https://www.nuhs.edu.sg/patient-care/nuhs-at-home/nuhs-home-events" target="_blank" rel="noopener">
+              <strong>Events</strong>
+              <span>Upcoming NUHS@Home activity and engagement opportunities.</span>
+            </a>
+          </div>
+        </section>
+
+        <section id="contact" class="contentSection">
+          <div class="sectionIntro">
+            <h2>Contact Us</h2>
+            <p>
+              If you or your loved one may benefit from hospital-level care at home, or for collaboration enquiries,
+              please use the official programme channels below.
+            </p>
+          </div>
+
+          <div class="contactPanel">
+            <a class="contactLink" href="mailto:asknuhsathome@nuhs.edu.sg">asknuhsathome@nuhs.edu.sg</a>
+            <a class="contactLink" href="https://facebook.com/nuhsathome" target="_blank" rel="noopener">Facebook: NUHS@Home</a>
+            <a class="contactLink" href="https://www.instagram.com/nuhsathome" target="_blank" rel="noopener">Instagram: @nuhsathome</a>
+            <a class="contactLink" href="https://www.nuhs.edu.sg/patient-care/nuhs-at-home" target="_blank" rel="noopener">Official NUHS@Home hub</a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="siteFooter">
+      <div class="footerTop">
+        <div class="container footerInner">
+          <div>
+            <strong>NUHS@Home</strong>
+            <p>Static adaptation using the Alexandra Hospital visual structure and official NUHS@Home content.</p>
+          </div>
+          <div>
+            <p>1E Kent Ridge Road, NUHS Tower Block, Singapore 119228</p>
+            <p><a href="tel:+6569082222">+65 6908 2222</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <button id="backToTop" type="button" aria-label="Back to top">&#8593;</button>
+
+    <script src="assets/js/site.js"></script>
+  </body>
+</html>
