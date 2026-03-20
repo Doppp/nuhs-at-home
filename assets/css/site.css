@@ -1013,7 +1013,8 @@ ul {
     text-align: center;
     flex: 0 0 auto;
     min-height: 70px;
-    max-width: 120px;
+    min-width: 120px;
+    max-width: none;
   }
 
   .nav-item > .nav-link {
@@ -1024,6 +1025,7 @@ ul {
     font-weight: 600;
     text-align: center;
     min-height: 100%;
+    line-height: 1.35;
   }
 
   .nav-item:hover > .nav-link {
@@ -1042,6 +1044,15 @@ ul {
   .dropdown-menu {
     position: absolute;
     z-index: 20;
+    width: auto;
+    min-width: 36rem;
+    max-width: min(90vw, 52rem);
+    padding: 1.8rem 1.5rem;
+  }
+
+  .nav-item:nth-last-child(-n + 2) > .dropdown-menu {
+    left: auto;
+    right: 0;
   }
 
   .spotlight {
@@ -1070,15 +1081,16 @@ ul {
   }
 
   .menu-grid-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(13rem, 1fr));
   }
 
   .menu-grid-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(12rem, 1fr));
   }
 
   .menuCol {
-    padding: 0 3.375rem;
+    min-width: 0;
+    padding: 0 1.25rem;
   }
 
   .heroFrame img {

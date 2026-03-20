@@ -2,8 +2,9 @@
 
 from __future__ import annotations
 
+import posixpath
 import re
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
 SITE_ROOT = "https://www.nuhs.edu.sg"
@@ -44,7 +45,7 @@ LISTING_PAGES = {
 ITEM_LISTING_SCRIPT = (
     '<script type="text/javascript" src="https://www.nuhs.edu.sg/Mvc/Views/ItemListing/itemlisting.js" defer></script>'
 )
-LOCAL_LISTING_SCRIPT = '<script src="/assets/js/local-item-listings.js" defer></script>'
+LOCAL_LISTING_SCRIPT_PATH = PurePosixPath("assets/js/local-item-listings.js")
 
 
 def rewrite_html(html: str) -> str:
@@ -56,13 +57,27 @@ def rewrite_html(html: str) -> str:
     return html
 
 
-def localize_mirrored_paths(html: str) -> str:
+def relative_url(current_page: str, target_path: str, trailing_slash: bool = True) -> str:
+    current_dir = PurePosixPath(current_page.lstrip("/"))
+    target_dir = PurePosixPath(target_path.lstrip("/"))
+    relative = posixpath.relpath(str(target_dir), str(current_dir))
+    if relative == ".":
+        return "./"
+    if trailing_slash:
+        return f"{relative}/"
+    return relative
+
+
+def localize_mirrored_paths(html: str, current_page: str) -> str:
     for path in sorted(PAGES, key=len, reverse=True):
         for root in ALT_SITE_ROOTS:
             pattern = re.compile(
                 re.escape(f"{root}{path}") + r"(?P<suffix>(?:[?#][^\"'<>\\s]*)?)(?=[\"'<>\\s])"
             )
-            html = pattern.sub(lambda match: f"{path}{match.group('suffix')}", html)
+            html = pattern.sub(
+                lambda match, target=path: f"{relative_url(current_page, target, trailing_slash=True)}{match.group('suffix')}",
+                html,
+            )
 
     return html
 
@@ -81,11 +96,11 @@ def extract_listing_items(fragment: str) -> str:
     return fragment[start:end].strip()
 
 
-def build_listing_html(fragment_paths: list[Path]) -> str:
+def build_listing_html(fragment_paths: list[Path], current_page: str) -> str:
     items = []
     for fragment_path in fragment_paths:
         fragment = fragment_path.read_text(encoding="utf-8")
-        items.append(extract_listing_items(localize_mirrored_paths(rewrite_html(fragment))))
+        items.append(extract_listing_items(localize_mirrored_paths(rewrite_html(fragment), current_page)))
 
     combined_items = "\n".join(items)
     return (
@@ -97,7 +112,7 @@ def build_listing_html(fragment_paths: list[Path]) -> str:
     )
 
 
-def inject_listing_content(html: str, listing_html: str) -> str:
+def inject_listing_content(html: str, listing_html: str, current_page: str) -> str:
     match = re.search(r'class="itemListing"[^>]*data-uniqueid="([^"]+)"', html)
     if not match:
         raise ValueError("Could not find item listing unique id.")
@@ -109,8 +124,10 @@ def inject_listing_content(html: str, listing_html: str) -> str:
 
     html = html.replace(list_div, f'<div id="{unique_id}-list">\n{listing_html}</div>', 1)
     html = html.replace(ITEM_LISTING_SCRIPT, "")
-    if LOCAL_LISTING_SCRIPT not in html:
-        html = html.replace("</body>", f"{LOCAL_LISTING_SCRIPT}\n  </body>", 1)
+    local_script = relative_url(current_page, str(LOCAL_LISTING_SCRIPT_PATH), trailing_slash=False)
+    local_script_tag = f'<script src="{local_script}" defer></script>'
+    if local_script_tag not in html:
+        html = html.replace("</body>", f"{local_script_tag}\n  </body>", 1)
     return html
 
 
@@ -119,10 +136,10 @@ def build_page(path: str, source: Path) -> None:
     target.parent.mkdir(parents=True, exist_ok=True)
     html = source.read_text(encoding="utf-8")
     html = rewrite_html(html)
-    html = localize_mirrored_paths(html)
+    html = localize_mirrored_paths(html, path)
 
     if path in LISTING_PAGES:
-        html = inject_listing_content(html, build_listing_html(LISTING_PAGES[path]))
+        html = inject_listing_content(html, build_listing_html(LISTING_PAGES[path], path), path)
 
     target.write_text(html, encoding="utf-8")
     print(f"Built {target.relative_to(ROOT_DIR)}")

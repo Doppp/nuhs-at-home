@@ -20,7 +20,7 @@ const searchIndex = [
   { title: "Contact the Team", href: "#contact", keywords: ["contact", "email", "asknuhsathome", "facebook", "instagram"] },
   {
     title: "Official NUHS@Home Page",
-    href: "/patient-care/nuhs-at-home",
+    href: "patient-care/nuhs-at-home/",
     keywords: ["official", "website", "hub", "nuhs"]
   }
 ];
